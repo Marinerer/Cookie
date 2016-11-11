@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>cookie</title>
+<style>
+div{padding:10px;}
+input[type=text]{width: 80%; padding: 8px 10px; font-size: 16px;}
+input[type=button]{padding: 5px 10px;}
+</style>
+</head>
+<body>
+<div class="column">
+	<p><input type="text" id="name" placeholder="name"></p>
+	<p><input type="text" id="value" placeholder="value"></p>
+	<p><input type="text" id="expires" placeholder="2016/11/11 12:00:00"></p>
+	<p><input type="button" value="增 加" id="btn_add"></p>
+</div>
+<div class="column">
+	<p><input type="text" id="cookie_name" placeholder="cookie名"></p>
+	<p><input type="button" value="删 除" id="btn_del"></p>
+</div>
+<ul id="cookieList"></ul>
+
+
+<script src="../dist/cookie.min.js"></script>
+<script>
++function(win, doc) {
+	get();
+
+	$('btn_add').addEventListener('click', function() {
+		cookie($('name').value, $('value').value, $('expires').value);
+		get();
+	}, false);
+	$('btn_del').addEventListener('click', function() {
+		cookie($('cookie_name').value, null);
+		get();
+	}, false);
+}(window, document)
+
+function $(name) {
+	return document.getElementById(name);
+}
+function get() {
+	// var lists = document.createElement('ul');
+	var list = '';
+	var cookies = cookie();
+	for(var v in cookies) {
+		list += '<li><strong>'+ v + '</strong>: ' + cookies[v] + '</li>';
+	}
+	$('cookieList').innerHTML = list;
+	// document.body.appendChild(lists)
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "name": "cookie.js",
+  "version": "1.1.1",
+  "description": "简单轻量级的JS cookie操作库",
+  "main": "cookie.js",
+  "scripts": {
+    "test": "gulp server",
+    "start": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mengqing723/cookie.git"
+  },
+  "keywords": [
+    "cookie"
+  ],
+  "author": "mengqing723@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mengqing723/cookie/issues"
+  },
+  "homepage": "https://github.com/mengqing723/cookie",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-header": "^1.8.8",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-uglify": "^2.0.0"
+  }
+}
