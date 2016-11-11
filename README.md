@@ -129,4 +129,4 @@ cookie.remove(['name', 'age']) 		// 删除cookie  'name','age'
 
 # Bug tracker
 
-Have a bug? Please create an issue on GitHub at [issues](https://github.com/mengqing723/jQuery-scrollFix/issues)
+Have a bug? Please create an issue on GitHub at [issues](https://github.com/mengqing723/cookie/issues)
