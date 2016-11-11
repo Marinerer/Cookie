@@ -128,8 +128,6 @@
 			len = arguments.length;
 		if(len === 1 && typeof name === 'string')
 			return C.get(name);
-		if(len === 1 && name === null)
-			return C.clear();
 		if(len > 1 && name && value)
 			return C.set(name, value, options);
 		if(value === null)							// !0 = true;
