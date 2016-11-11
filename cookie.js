@@ -124,14 +124,17 @@
 	}
 
 	var cookie = function(name, value, options) {
-		var len = arguments.length;
+		var C = Cookie(),
+			len = arguments.length;
 		if(len === 1 && typeof name === 'string')
-			return Cookie().get(name);
-		if(len === 2 && !value)
-			return Cookie().remove(name);
+			return C.get(name);
+		if(len === 1 && name === null)
+			return C.clear();
 		if(len > 1 && name && value)
-			return Cookie().set(name, value, options);
-		return Cookie().all();
+			return C.set(name, value, options);
+		if(value === null)							// !0 = true;
+			return C.remove(name);
+		return C.all();
 	}
 	for(var k in Cookie.prototype) {
 		cookie[k] = Cookie.prototype[k];
