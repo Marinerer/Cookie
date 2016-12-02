@@ -11,7 +11,7 @@ const banner = `/*!
  * ${pkg.homepage}
  *
  * Copyright (c) ${new Date().getFullYear()} ${pkg.author.name}
- * Released under the ${pkg.license} license
+ * Released under the ${pkg.license} license 
  *
  * Date: ${new Date().toISOString()}
  */
