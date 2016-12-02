@@ -1,10 +1,11 @@
 /*!
- * cookie.js
- * @ desc: 简单轻量级的JS cookie操作库
- * @ version: 1.1.1
- * @ link: https://github.com/mengqing723/cookie
- * @ by: mengqing723@gmail.com
- * @ update: Fri Nov 11 2016 15:08:38 GMT+0800 (中国标准时间)
+ * Distpicker v1.1.1
+ * https://github.com/mengqing723/cookie
+ *
+ * Copyright (c) 2016 lmq
+ * Released under the MIT license
+ *
+ * Date: 2016-12-02T03:27:48.315Z
  */
 
 
