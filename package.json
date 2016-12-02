@@ -2,7 +2,7 @@
   "name": "cookie.js",
   "version": "1.1.1",
   "description": "简单轻量级的JS cookie操作库",
-  "main": "cookie.js",
+  "main": "dist/cookie.min.js",
   "scripts": {
     "test": "gulp server",
     "start": "gulp build"
@@ -14,7 +14,10 @@
   "keywords": [
     "cookie"
   ],
-  "author": "mengqing723@gmail.com",
+  "author": {
+    "name": "lmq",
+    "Email": "mengqing723@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mengqing723/cookie/issues"
