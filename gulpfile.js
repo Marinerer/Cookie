@@ -5,6 +5,7 @@ const replace = require('gulp-replace');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const connect = require("gulp-connect");
+
 const banner = `/*!
  * Distpicker v${pkg.version}
  * ${pkg.homepage}
