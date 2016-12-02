@@ -1,23 +1,22 @@
-var gulp = require('gulp');
-var header = require('gulp-header');
-var pkg = require('./package.json');
-var replace = require('gulp-replace');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var connect = require("gulp-connect");
+const gulp = require('gulp');
+const header = require('gulp-header');
+const pkg = require('./package.json');
+const replace = require('gulp-replace');
+const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
+const connect = require("gulp-connect");
+const banner = `/*!
+ * Distpicker v${pkg.version}
+ * ${pkg.homepage}
+ *
+ * Copyright (c) ${new Date().getFullYear()} ${pkg.author.name}
+ * Released under the ${pkg.license} license
+ *
+ * Date: ${new Date().toISOString()}
+ */
+`;
 
-gulp.task('build', function() {
-	var banner = [
-        '/*!',
-		' * <%= pkg.name %>',
-		' * @ desc: <%= pkg.description %>',
-		' * @ version: <%= pkg.version %>',
-		' * @ link: <%= pkg.homepage %>',
-		' * @ by: <%= pkg.author %>',
-		' * @ update: <%= new Date() %>',
-		' */',
-        ''].join('\n');
-
+gulp.task('build', () => {
 	gulp.src('./cookie.js', {base: './'})
 		.pipe(replace(/(\/\/.*)|(\/\*[\s\S]*?\*\/)/g, "")) 		// 去掉注释
 		.pipe(header(banner, { pkg : pkg } ))
@@ -28,7 +27,7 @@ gulp.task('build', function() {
 		.pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('server', ['build'], function () {
+gulp.task('server', ['build'], () => {
 	connect.server({
 		name: 'test',
 		root: './',
