@@ -1,6 +1,10 @@
 
 # 关于 cookie.js
 
+[![GitHub issues](https://img.shields.io/github/issues/mengqing723/cookie.svg?style=flat-square)](https://github.com/mengqing723/cookie/issues)
+[![GitHub forks](https://img.shields.io/github/forks/mengqing723/cookie.svg?style=flat-square)](https://github.com/mengqing723/cookie/network)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/mengqing723/cookie/master/LICENSE)
+
 一个简单、轻量级的JavaScript cookie操作库
 
 
