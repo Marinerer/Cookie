@@ -4,14 +4,14 @@
  * date: 2016/11/07
 */
 
-;(function (root, factory) {
-	if (typeof define === 'function' && define.amd) {
-		define(factory);
-	} else if (typeof exports === 'object' && exports) {
-		module.exports = factory();
-	} else {
-		root.cookie = factory();
-	}
+(function(global, factory) {
+    if (typeof exports === 'object' && typeof module !== 'undefined') {
+        module.exports = factory()
+    } else if (typeof define === 'function' && define.amd) {
+        define(factory)
+    } else {
+        global['cookie'] = factory()
+    }
 }(typeof window === 'undefined' ? this : window, function() {
 	var getKeys = Object.keys || function (obj) {
 		var keys = [], key = '';
@@ -89,7 +89,7 @@
             var path = '; path=' + (opt.path ? opt.path : "/"),										// 设置路径
 	            domain = opt.domain ? '; domain=' + opt.domain : '',								// 设置域
 	            secure = opt.secure ? '; secure' : '';												// 设置安全措施，为 true 则直接设置，否则为空
-	        document.cookie = name + "=" + escape(value) + expires + path + domain + secure;		// 转码并赋值
+	        document.cookie = name + "=" + encodeURI(value) + expires + path + domain + secure;		// 转码并赋值
 	    },
 		/**
 		 * 删除cookie
@@ -116,7 +116,7 @@
 				var cookies = document.cookie.split('; ');
 				for(var i = 0, len = cookies.length; i < len; i++) {
 					var item = cookies[i].split('=');
-					result[unescape(item[0])] = unescape(item[1]);
+					result[decodeURI(item[0])] = decodeURI(item[1]);
 				}
 			}
 			return result;
@@ -130,7 +130,7 @@
 			return C.get(name);
 		if(len > 1 && name && value)
 			return C.set(name, value, options);
-		if(value === null)							// !0 = true;
+		if(value === null)		// !0 = true;
 			return C.remove(name);
 		return C.all();
 	}
